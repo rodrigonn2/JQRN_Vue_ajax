@@ -1,4 +1,4 @@
-# Nascimento Rodrigo - Portfolio - Section B
+# Nascimento Rodrigo - Vue Ajax - Section B
 
 **Objective:** create a website to exercite the full stack development, using vue and ajax to connect to a lumen api.
 
