@@ -10,9 +10,20 @@ class PlayerController extends Controller {
 
     public function getAll() {
         $players = PLayer::join('clubs', 'clubs.id', '=', 'club_id')
-            ->select('clubs.id', 'clubs.name', 'club_id', 'player_name', 'img_player', 'age', 'position')
+            ->select('clubs.id', 'clubs.name', 'player_name', 'img_player', 'age', 'position')
             ->orderBy('id')
             ->get();
+        return response()->json([
+            'results' => $players
+        ]);
+    }
+
+    public function getAllFromClub($club_id) {
+        $players = Player::join('clubs', 'clubs.id', '=', 'club_id')
+            ->select('clubs.id', 'clubs.name', 'player_name', 'img_player', 'age', 'position')
+            ->where('clubs.id', '=', $club_id) 
+            ->get();
+
         return response()->json([
             'results' => $players
         ]);
