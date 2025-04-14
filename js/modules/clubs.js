@@ -45,6 +45,36 @@ export function clubData() {
           this.loadingClubInfo = false;
         });
       }
+    },
+    mounted() {
+      const slideUp = document.querySelectorAll('.slide-up'),
+      slideLeft = document.querySelectorAll('.slide-left'),
+      fade = document.querySelectorAll('.fade');
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      if (window.innerWidth >= 412) {
+        slideUp.forEach(container => {
+            gsap.fromTo(container, {opacity: 0, y: 50},
+                {opacity: 1, y: 0, duration: 1, ease: 'power.out',
+                    scrollTrigger: {trigger: container, start: 'top center'}
+                });
+        });
+
+        slideLeft.forEach(container => {
+            gsap.fromTo(container, {opacity: 0, x: -30},
+                {delay: 0.5, opacity: 1, x: 0, duration: 0.5, ease: 'power.out',
+                    scrollTrigger: {trigger: container, start: 'top center'}
+                });
+        });
+
+        fade.forEach(container => {
+          gsap.fromTo(container, {opacity: 0, y: 20},
+              {delay: 0.5, opacity: 1, y: 0, duration: 1, ease: 'power.out',
+                  scrollTrigger: {trigger: container, start: 'center center'}
+              });
+        });
+      }
     }
   });
 
