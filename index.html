@@ -13,6 +13,7 @@
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer type="module" src="js/main.js"></script>
 
     <title>Paulista Teams</title>
@@ -95,129 +96,59 @@
           <h3 class="hidden">Paulista Teams</h3>
 
           <div class="col-span-full" id="team-con">
+            <div class="center loader-con" v-if="loadingClubs">
+              <p>Loading</p>
+              <svg class="loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
+            </div>
+            
+            <div v-if="error" class="error center">{{ error }}</div>
+
             <div class="teams">
-              <div class="team-logo"><img src="images/clubs/curintia.png" alt="Corinthians FC"/></div>
-              <div class="team-logo"><img src="images/clubs/saopaulofc.png" alt="São Paulo FC"/></div>
-              <div class="team-logo"><img src="images/clubs/peixe.png" alt="Santos FC"/></div>
-              <div class="team-logo"><img src="images/clubs/parmera.png" alt="Palmeiras FC"/></div>
+              <div class="team-logo" v-for="(club, index) in clubsData" @click="selectClub(club)"><img :src="club.img_club" :alt="club.name"/></div>
             </div>
           </div>
-
-          <!-- <img class="col-start-1 col-end-3 m-col-start-1 m-col-end-4" src="images/clubs/curintia.png" alt="Corinthians FC"/>
-          <img class="col-start-3 col-end-5 m-col-start-4 m-col-end-7" src="images/clubs/saopaulofc.png" alt="São Paulo FC"/>
-          <img class="col-start-1 col-end-3 m-col-start-7 m-col-end-10" src="images/clubs/peixe.png" alt="Santos FC"/>
-          <img class="col-start-3 col-end-5 m-col-start-10 m-col-end-13" src="images/clubs/parmera.png" alt="Palmeiras FC"/> -->
 
           <div class="col-span-full" id="desc-con">
             <h3 class="hidden">Team Description</h3>
 
-            <div class="team-info center">
-                <p class="bold subtitle">Foundation</p>
-                <p class="foundation">January 25 - 1930</p>
-
-                <p class="bold subtitle">Stadium</p>
-                <p class="stadium">Cícero Pompeu de Toledo (Morumbis)</p>
+            <div class="center loader-con" v-if="loadingClubInfo">
+              <p>Loading</p>
+              <svg class="loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
+            </div>
+            
+            <div v-if="selectedClub" id="team-details" class="team-info center">
+              <p class="bold subtitle">Foundation</p>
+              <p class="foundation">{{ selectedClub.foundation_date }}</p>
+          
+              <p class="bold subtitle">Stadium</p>
+              <p class="stadium">{{ selectedClub.stadium_name }}</p>
             </div>
 
-            <img src="images/stadium/morumbi.jpg" alt="Morumbi Stadium" class="stadium-img"/>
+            <img v-if="selectedClub" :src="selectedClub.img_stadium" :alt="selectedClub.stadium_name" class="stadium-img"/>
           </div>
 
-          <div class="col-span-full" id="player-con">
+          <div v-if="selectedClub" class="col-span-full" id="player-con">
             <h3 class="center">Players</h3>
 
+            <div class="center loader-con" v-if="loadingPlayers">
+              <p>Loading</p>
+              <svg class="loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#000000" stroke="#000000" stroke-width="15" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
+            </div>
+
             <div class="players">
-              <div class="person">
-                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+              <div class="person" v-for="player in players">
+                <img :src="player.img_player" :alt="player.player_name" class="player-img"/>
+                
                 <div class="player-info center">
-                  <h4 class="player-name">Rafael</h4>
-                  <p class="player-age">34 years</p>
-                  <p class="player-position">Midfielder</p>
+                  <h4 class="player-name">{{ player.player_name }}</h4>
+                  <p class="player-age">{{ player.age }} years</p>
+                  <p class="player-position">{{ player.position }}</p>
                 </div>
               </div>
-
-              <div class="person">
-                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
-                <div class="player-info center">
-                  <h4 class="player-name">Rafael</h4>
-                  <p class="player-age">34 years</p>
-                  <p class="player-position">Midfielder</p>
-                </div>
-              </div>
-
-              <div class="person">
-                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
-                <div class="player-info center">
-                  <h4 class="player-name">Rafael</h4>
-                  <p class="player-age">34 years</p>
-                  <p class="player-position">Midfielder</p>
-                </div>
-              </div>
-
-              <div class="person">
-                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
-                <div class="player-info center">
-                  <h4 class="player-name">Rafael</h4>
-                  <p class="player-age">34 years</p>
-                  <p class="player-position">Midfielder</p>
-                </div>
-              </div>
-
-              <div class="person">
-                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
-                <div class="player-info center">
-                  <h4 class="player-name">Rafael</h4>
-                  <p class="player-age">34 years</p>
-                  <p class="player-position">Midfielder</p>
-                </div>
-              </div>
-
-
-              <div class="person">
-                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
-                <div class="player-info center">
-                  <h4 class="player-name">Rafael</h4>
-                  <p class="player-age">34 years</p>
-                  <p class="player-position">Midfielder</p>
-                </div>
-              </div>
-
-              <div class="person">
-                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
-                <div class="player-info center">
-                  <h4 class="player-name">Rafael</h4>
-                  <p class="player-age">34 years</p>
-                  <p class="player-position">Midfielder</p>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
       </section>
-
-      <!-- <section class="grid-con">
-        <div class="timeline-text col-span-full">
-          <h4 class="section-title">Evolution Timeline</h4>
-          <h5 class="section-subtitle">All Playstation Consoles</h5>
-        </div>
-        <div class="carousel col-span-full">
-          <div class="carousel-track-container">
-            <div class="carousel-track"></div>
-          </div>
-          <div class="carousel-buttons">
-            <button id="prevBtn">
-              <img src="images/arrow-left.svg" alt="Previous" />
-            </button>
-            <button id="nextBtn">
-              <img src="images/arrow-right.svg" alt="Next" />
-            </button>
-          </div>
-        </div> -->
-
-        <!-- <div class="col-span-full m-col-start-2 m-col-end-12 info-slider">
-          <div class="console-con"></div>
-        </div>
-      </section> -->
 
       <footer class="full-width-grid-con">
           <h2 class="hidden">Footer</h2>
