@@ -1,0 +1,39 @@
+@use "../abstracts" as a;
+
+#team-select {
+    padding: 60px 0;
+    background-color: a.$white;
+    color: a.$black;
+
+    img {
+        width: 100%;
+    }
+}
+
+.teams {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .team-logo {
+        width: calc(50% - 40px);
+        filter: grayscale(100%);
+        opacity: 0.5;
+        padding: 20px;
+
+        img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        @media (min-width: 800px) {
+            width: calc(25% - 40px);
+        }
+    }
+
+    .team-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+    }
+}

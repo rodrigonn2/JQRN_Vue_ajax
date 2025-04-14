@@ -1,0 +1,19 @@
+@use "../abstracts" as a;
+
+#desc-con {
+
+    img {
+        width: 100%;
+        max-width: 600px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+#player-con {
+    padding: 60px 0;
+
+    h3 {
+        font-size: 22pt;
+    }
+}

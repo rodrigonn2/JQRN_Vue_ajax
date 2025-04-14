@@ -1,0 +1,32 @@
+@use "../abstracts" as a;
+
+footer {
+    color: a.$white;
+    padding: 40px 40px 20px 40px;
+
+    .credits {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        p {
+            text-align: center;
+            margin: 0 30px 15px 30px;
+        }
+
+        @media (min-width: 800px) {
+            justify-content: space-between;
+            text-align: left;
+            margin: 0;
+            p {
+                text-align: left;
+                margin: 0;
+            }
+
+        }
+    }
+
+    @media (min-width: 800px) {
+        padding-top: 30px;
+    }
+}
