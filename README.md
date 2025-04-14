@@ -11,7 +11,7 @@ This project integrates a Vue.js frontend with a Lumen-based API to showcase maj
 The site features four football clubs, each with its own set of details and player information. Users can interact with each team to explore unique stats and content for that club.
 
 ## Team
-Jenifer Quelali
+Jenifer Quelali  
 Rodrigo Nascimento
 
 ## Installation
