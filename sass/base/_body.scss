@@ -1,5 +1,9 @@
 @use "../abstracts" as a;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: a.$black;
   font-family: a.$body-font-family;
