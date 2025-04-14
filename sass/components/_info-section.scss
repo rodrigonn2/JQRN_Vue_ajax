@@ -1,0 +1,63 @@
+@use "../abstracts" as a;
+
+// <section class="full-width-grid-con" id="champ-info">
+//         <h2 class="hidden">Championship Info</h2>
+
+//         <div class="grid-con">
+//           <div class="info col-span-full l-col-start-1 l-col-end-5">
+//             <p class="bold subtitle">BRAZIL’S MOST DIFICULT REGIONAL CHAMPIONSHIP</p>
+          
+//             <h3>THE CAMPEONATO PAULISTA</h3>
+  
+//             <p>The Campeonato Paulista, also known as the São Paulo State Championship, is one of the oldest and most prestigious football competitions in Brazil. It was first held in 1902, making it the oldest state-level tournament in the country. Organized by the Federação Paulista de Futebol (FPF), the championship features clubs from the state of São Paulo, which is home to some of Brazil’s most successful teams./p>
+//             <p>Over the decades, traditional powerhouses like Corinthians, Palmeiras, São Paulo FC, and Santos have dominated the competition. These clubs have not only found success in the state league but have also won numerous national and international titles, raising the overall level of the tournament.</p>
+//             <p>The Campeonato Paulista is known for its fierce rivalries, passionate fan bases, and the emergence of legendary players such as Pelé, Sócrates, and Neymar. It often serves as a showcase for young talents and a warm-up for national competitions like the Brasileirão. Today, despite the rise of national and international tournaments, the Paulista Championship remains highly competitive and deeply rooted in the culture of Brazilian football.</p>
+//           </div>
+
+//           <div class="info-img col-span-full l-col-start-7 l-col-end-13">
+//             <img src="images/collage.png" alt="Collage of several wins in the championship"/>
+//           </div>
+//         </div>
+// </section>
+
+
+#champ-info {
+    padding: 100px 0;
+    background-color: rgb(0, 0, 0);
+    color: a.$white;
+
+    .subtitle {
+        font-size: 12pt;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 32pt;
+        line-height: 50px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 12pt;
+        margin-bottom: 15px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @media (min-width: 800px) {
+        .subtitle {
+            font-size: 14pt;
+        }
+        
+        h3 {
+            font-size: 40pt;
+            line-height: 58px;
+        }
+
+        p {
+            font-size: 14pt;
+        }
+    }
+}

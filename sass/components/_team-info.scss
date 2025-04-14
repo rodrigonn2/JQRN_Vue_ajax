@@ -1,0 +1,15 @@
+@use "../abstracts" as a;
+
+.team-info {
+    padding: 60px 0 30px 0;
+
+    .subtitle {
+        font-size: 16pt;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 12pt;
+        margin-bottom: 10px;
+    }
+}
