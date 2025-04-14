@@ -1,0 +1,43 @@
+@use "../abstracts" as a;
+
+#champ-info {
+    padding: 100px 0;
+    background-color: a.$black;
+    color: a.$white;
+
+    .subtitle {
+        font-size: 12pt;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 32pt;
+        line-height: 50px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 12pt;
+        margin-bottom: 15px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @media (min-width: 800px) {
+        .subtitle {
+            font-size: 14pt;
+        }
+        
+        h3 {
+            font-size: 40pt;
+            line-height: 58px;
+        }
+
+        .info-img {
+            grid-row: 1 / 4;
+            align-content: center;
+        }
+    }
+}
