@@ -1,48 +1,45 @@
 # Vue Ajax
 
 **Objective:** 
-Create a website to practice full-stack development using Vue and AJAX to connect to a Lumen API.
+Build a website utilizing a frontend framework that can connect to a custom Lumen API.
 
-
-![Website Photo](images/readme_img.jpg)
-
+![Website Photo](images/image.png)
 
 ## About
+This project integrates a Vue.js frontend with a Lumen-based API to showcase major football clubs from the Paulista Championship. Using Vue components and JavaScript's Fetch API, dynamic data from the backend is rendered to the website.
 
-This project is designed to practice full-stack development using Vue.js on the front-end and a Lumen-based API on the back-end. The application emphasizes the use of computed properties in Vue.js—highlighting their structure, their differences from methods, and how they automatically track reactive dependencies. It also delves into the lifecycle of a Vue instance, with a focus on the creation, mounting, updating, and destruction phases.
-To illustrate these concepts, the project features a website dedicated to football in São Paulo, showcasing the region's major teams, their stadiums, and key players. All content is rendered dynamically, providing a smooth and interactive user experience without requiring page reloads.
+The site features four football clubs, each with its own set of details and player information. Users can interact with each team to explore unique stats and content for that club.
 
-
-
-## Group
-Jenifer Quaelali
+## Team
+Jenifer Quelali
 Rodrigo Nascimento
 
-
 ## Installation
-No installation required
 
+1. **Install Composer:** https://getcomposer.org/
 
+2. **Clone this repository:**
+```bash
+    git clone https://github.com/rodrigonn2/JQRN_Vue_ajax.git
+```
 
+3. **Access this project in your terminal and run:** 
+```bash
+   cd install composer
+   ```
+4. **Open a local server and you are good to go!** 
 
-## Technology Used
-1. VUE
-2. AJAX
-3. HTML + CSS (Sass) + Java Script (Green Socks)
-4. PHP
+## Technologies Used
+1. Vue.js
+2. AJAX (Fetch API)
+3. HTML, SCSS
+4. PHP (Lumen)
+5. GSAP
 
 ## History
-APRIL 2025
-
+April 2025
 
 ## Prototype
 https://www.figma.com/design/RJ8qdbyx8Pac2GQIBUdqUO/PAULISTA_SOCCER?node-id=35-108&t=VNzMhbN2QBwbqdjZ-0
-
-
-
-## Image References:
-Teams, stadiuns and players: Google
-https://unsplash.com/photos/man-playing-soccer-game-on-field-AWdCgDDedH0
-https://unsplash.com/photos/soccer-field-during-daytime-SZJQcQGgNVU
 
 
