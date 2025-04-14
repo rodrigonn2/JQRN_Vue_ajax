@@ -1,17 +1,28 @@
-# Nascimento Rodrigo - Vue Ajax - Section B
+# Vue Ajax
 
-**Objective:** create a website to exercite the full stack development, using vue and ajax to connect to a lumen api.
+**Objective:** 
+Create a website to practice full-stack development using Vue and AJAX to connect to a Lumen API.
+
+
+![Website Photo](images/readme/readme_img.jpg)
+
+
+## About
+
+This project is designed to practice full-stack development using Vue.js on the front-end and a Lumen-based API on the back-end. The application emphasizes the use of computed properties in Vue.js—highlighting their structure, their differences from methods, and how they automatically track reactive dependencies. It also delves into the lifecycle of a Vue instance, with a focus on the creation, mounting, updating, and destruction phases.
+To illustrate these concepts, the project features a website dedicated to football in São Paulo, showcasing the region's major teams, their stadiums, and key players. All content is rendered dynamically, providing a smooth and interactive user experience without requiring page reloads.
+
 
 
 ## Group
-
 Jenifer Quaelali
 Rodrigo Nascimento
 
 
-
 ## Installation
 No installation required
+
+
 
 
 ## Technology Used
