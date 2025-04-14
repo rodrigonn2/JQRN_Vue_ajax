@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="css/grid.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+
+    <title>Paulista Teams</title>
+  </head>
+
+  <body>
+    <header class="full-width-grid-con" id="header">
+      <h1 class="hidden">PaulistaChampionship Team Info</h1>
+
+      <div class="grid-con">
+          <h2 class="hidden">Header</h2>
+
+          <div class="col-start-1 col-end-4" id="logo">
+              <a href="index.html"><img src="images/logo.svg" alt="PaulistaChampionship Logo"></a>
+          </div>
+
+          <div class="col-start-4 col-end-5 m-col-start-12 m-col-end-13" id="burger">
+            <img src="images/bars-menu.svg" alt="A burger menu icon">
+        </div>
+
+          <nav class="col-span-full m-col-start-6 m-col-end-13" id="menu">
+              <h3 class="hidden">Header Navigation</h3>
+              <ul>
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Teams and Players</a></li>
+                  <li><a href="#">Paulista Federation</a></li>
+              </ul>
+          </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="full-width-grid-con" id="hero">
+        <h2 class="hidden">Hero</h2>
+
+        <div class="grid-con">
+          <div class="hero-content col-span-full l-col-start-1 l-col-end-7">
+            <h3>Paulista Championship's Teams</h3>
+  
+            <p>Get to know the <span class="bold">top teams</span> and the athletes who make the São Paulo State Championship (Campeonato Paulista) one of the toughest in Brazil — and maybe even in the world.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="full-width-grid-con" id="champ-info">
+        <h2 class="hidden">Championship Info</h2>
+
+        <div class="grid-con">
+          <div class="info col-span-full l-col-start-1 l-col-end-6">
+            <p class="bold subtitle">BRAZIL’S MOST DIFICULT REGIONAL CHAMPIONSHIP</p>
+          
+            <h3>THE CAMPEONATO PAULISTA</h3>
+  
+            <p>The Campeonato Paulista, also known as the São Paulo State Championship, is one of the oldest and most prestigious football competitions in Brazil. It was first held in 1902, making it the oldest state-level tournament in the country. Organized by the Federação Paulista de Futebol (FPF), the championship features clubs from the state of São Paulo, which is home to some of Brazil’s most successful teams.</p>
+            <p>Over the decades, traditional powerhouses like Corinthians, Palmeiras, São Paulo FC, and Santos have dominated the competition. These clubs have not only found success in the state league but have also won numerous national and international titles, raising the overall level of the tournament.</p>
+            <p>The Campeonato Paulista is known for its fierce rivalries, passionate fan bases, and the emergence of legendary players such as Pelé, Sócrates, and Neymar. It often serves as a showcase for young talents and a warm-up for national competitions like the Brasileirão. Today, despite the rise of national and international tournaments, the Paulista Championship remains highly competitive and deeply rooted in the culture of Brazilian football.</p>
+          </div>
+
+          <div class="info-img col-span-full l-col-start-7 l-col-end-13">
+            <img src="images/champions.png" alt="Collage of several wins in the championship"/>
+          </div>
+        </div>
+      </section>
+
+      <section class="full-width-grid-con" id="banner">
+        <h2 class="hidden">Team Info Banner</h2>
+
+        <div class="grid-con">
+          <div class="col-span-full center">
+            <h3>TEAMS AND PLAYERS</h3>
+            <h4>Meet the clubs and their athletes</h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="full-width-grid-con" id="team-select">
+        <h2 class="hidden">Team Information</h2>
+
+        <div class="grid-con">
+          <h3 class="hidden">Paulista Teams</h3>
+
+          <div class="col-span-full" id="team-con">
+            <div class="teams">
+              <div class="team-logo"><img src="images/clubs/curintia.png" alt="Corinthians FC"/></div>
+              <div class="team-logo"><img src="images/clubs/saopaulofc.png" alt="São Paulo FC"/></div>
+              <div class="team-logo"><img src="images/clubs/peixe.png" alt="Santos FC"/></div>
+              <div class="team-logo"><img src="images/clubs/parmera.png" alt="Palmeiras FC"/></div>
+            </div>
+          </div>
+
+          <!-- <img class="col-start-1 col-end-3 m-col-start-1 m-col-end-4" src="images/clubs/curintia.png" alt="Corinthians FC"/>
+          <img class="col-start-3 col-end-5 m-col-start-4 m-col-end-7" src="images/clubs/saopaulofc.png" alt="São Paulo FC"/>
+          <img class="col-start-1 col-end-3 m-col-start-7 m-col-end-10" src="images/clubs/peixe.png" alt="Santos FC"/>
+          <img class="col-start-3 col-end-5 m-col-start-10 m-col-end-13" src="images/clubs/parmera.png" alt="Palmeiras FC"/> -->
+
+          <div class="col-span-full" id="desc-con">
+            <h3 class="hidden">Team Description</h3>
+
+            <div class="team-info center">
+                <p class="bold subtitle">Foundation</p>
+                <p class="foundation">January 25 - 1930</p>
+
+                <p class="bold subtitle">Stadium</p>
+                <p class="stadium">Cícero Pompeu de Toledo (Morumbis)</p>
+            </div>
+
+            <img src="images/stadium/morumbi.jpg" alt="Morumbi Stadium" class="stadium-img"/>
+          </div>
+
+          <div class="col-span-full" id="player-con">
+            <h3 class="center">Players</h3>
+
+            <div class="players">
+              <div class="person">
+                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+                <div class="player-info center">
+                  <h4 class="player-name">Rafael</h4>
+                  <p class="player-age">34 years</p>
+                  <p class="player-position">Midfielder</p>
+                </div>
+              </div>
+
+              <div class="person">
+                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+                <div class="player-info center">
+                  <h4 class="player-name">Rafael</h4>
+                  <p class="player-age">34 years</p>
+                  <p class="player-position">Midfielder</p>
+                </div>
+              </div>
+
+              <div class="person">
+                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+                <div class="player-info center">
+                  <h4 class="player-name">Rafael</h4>
+                  <p class="player-age">34 years</p>
+                  <p class="player-position">Midfielder</p>
+                </div>
+              </div>
+
+              <div class="person">
+                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+                <div class="player-info center">
+                  <h4 class="player-name">Rafael</h4>
+                  <p class="player-age">34 years</p>
+                  <p class="player-position">Midfielder</p>
+                </div>
+              </div>
+
+              <div class="person">
+                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+                <div class="player-info center">
+                  <h4 class="player-name">Rafael</h4>
+                  <p class="player-age">34 years</p>
+                  <p class="player-position">Midfielder</p>
+                </div>
+              </div>
+
+
+              <div class="person">
+                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+                <div class="player-info center">
+                  <h4 class="player-name">Rafael</h4>
+                  <p class="player-age">34 years</p>
+                  <p class="player-position">Midfielder</p>
+                </div>
+              </div>
+
+              <div class="person">
+                <img src="images/players/rafael.jpg" alt="Rafael" class="player-img"/>
+                <div class="player-info center">
+                  <h4 class="player-name">Rafael</h4>
+                  <p class="player-age">34 years</p>
+                  <p class="player-position">Midfielder</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="grid-con">
+        <div class="timeline-text col-span-full">
+          <h4 class="section-title">Evolution Timeline</h4>
+          <h5 class="section-subtitle">All Playstation Consoles</h5>
+        </div>
+        <div class="carousel col-span-full">
+          <div class="carousel-track-container">
+            <div class="carousel-track"></div>
+          </div>
+          <div class="carousel-buttons">
+            <button id="prevBtn">
+              <img src="images/arrow-left.svg" alt="Previous" />
+            </button>
+            <button id="nextBtn">
+              <img src="images/arrow-right.svg" alt="Next" />
+            </button>
+          </div>
+        </div> -->
+
+        <!-- <div class="col-span-full m-col-start-2 m-col-end-12 info-slider">
+          <div class="console-con"></div>
+        </div>
+      </section> -->
+
+      <footer class="full-width-grid-con">
+          <h2 class="hidden">Footer</h2>
+
+          <div class="col-span-full">
+            <div class="credits">
+              <p>@Paulista Championship 2025</p>
+              <p>Made by Jenifer Quelali and Rodrigo Nascimento</p>
+            </div>
+          </div>
+      </footer>
+    </main>
+  </body>
+</html>
