@@ -14,7 +14,7 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script defer type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 
     <title>Paulista Teams</title>
   </head>
@@ -46,10 +46,10 @@
     </header>
 
     <main>
-      <section class="full-width-grid-con" id="hero">
+      <section class="full-width-grid-con slide-up" id="hero">
         <h2 class="hidden">Hero</h2>
 
-        <div class="grid-con">
+        <div class="grid-con slide-left">
           <div class="hero-content col-span-full l-col-start-1 l-col-end-7">
             <h3>Paulista Championship's Teams</h3>
   
@@ -58,10 +58,10 @@
         </div>
       </section>
 
-      <section class="full-width-grid-con" id="champ-info">
+      <section class="full-width-grid-con slide-up" id="champ-info">
         <h2 class="hidden">Championship Info</h2>
 
-        <div class="grid-con">
+        <div class="grid-con slide-left">
           <div class="info col-span-full l-col-start-1 l-col-end-6">
             <p class="bold subtitle">BRAZIL’S MOST DIFICULT REGIONAL CHAMPIONSHIP</p>
           
@@ -78,7 +78,7 @@
         </div>
       </section>
 
-      <section class="full-width-grid-con" id="banner">
+      <section class="full-width-grid-con slide-up" id="banner">
         <h2 class="hidden">Team Info Banner</h2>
 
         <div class="grid-con">
@@ -103,12 +103,12 @@
             
             <div v-if="error" class="error center">{{ error }}</div>
 
-            <div class="teams">
+            <div class="teams slide-up">
               <div class="team-logo" v-for="(club, index) in clubsData" @click="selectClub(club)"><img :src="club.img_club" :alt="club.name"/></div>
             </div>
           </div>
 
-          <div class="col-span-full" id="desc-con">
+          <div class="col-span-full fade" id="desc-con">
             <h3 class="hidden">Team Description</h3>
 
             <div class="center loader-con" v-if="loadingClubInfo">
@@ -127,8 +127,8 @@
             <img v-if="selectedClub" :src="selectedClub.img_stadium" :alt="selectedClub.stadium_name" class="stadium-img"/>
           </div>
 
-          <div v-if="selectedClub" class="col-span-full" id="player-con">
-            <h3 class="center">Players</h3>
+          <div class="col-span-full fade" id="player-con">
+            <h3 v-if="selectedClub" class="center">Players</h3>
 
             <div class="center loader-con" v-if="loadingPlayers">
               <p>Loading</p>
