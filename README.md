@@ -4,7 +4,7 @@
 Create a website to practice full-stack development using Vue and AJAX to connect to a Lumen API.
 
 
-![Website Photo](images/readme/readme_img.jpg)
+![Website Photo](images/readme_img.jpg)
 
 
 ## About
